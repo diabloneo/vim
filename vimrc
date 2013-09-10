@@ -3,11 +3,16 @@ set nocompatible
 set shiftwidth=4
 set tabstop=4
 set expandtab
+set hidden
 filetype off
 
 "Search settings
 set hlsearch
 set incsearch
+
+"Encoding settings
+set encoding=utf-8
+set fileencodings=utf-8,gbk
 
 " Vundle settings
 set rtp+=~/.vim/bundle/vundle/
@@ -18,8 +23,10 @@ Bundle 'gmarik/vundle'
 "" My bundles here (original repos on github
 Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on 
+filetype plugin on
 
 "Text file settings
 
@@ -41,6 +48,10 @@ let g:pymode_rope = 1
 """" Documentation
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
+
+"""" Run code
+let g:pymode_run = 1
+let g:pymode_run_key = '<leader>r'
 
 """" Linting
 let g:pymode_lint = 1
