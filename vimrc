@@ -4,6 +4,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set hidden
+set autochdir
 filetype off
 
 "Search settings
@@ -27,6 +28,9 @@ Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on 
 filetype plugin on
+
+"" NERDTree settings
+let NERDTreeChDirMode=2
 
 "Text file settings
 
