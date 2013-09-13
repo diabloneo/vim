@@ -5,6 +5,7 @@ set tabstop=4
 set expandtab
 set hidden
 set autochdir
+set wildchar=<Tab> wildmenu wildmode=full
 filetype off
 
 "Search settings
