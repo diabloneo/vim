@@ -4,7 +4,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set hidden
-set autochdir
+"-- set autochdir  " conflict with cscope
 set wildchar=<Tab> wildmenu wildmode=full
 filetype off
 
