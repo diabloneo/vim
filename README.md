@@ -8,4 +8,3 @@ Then you need to do following things:
 
 1. Start you VIM.
 2. Run command `:helptag ~/.vim/doc`.
-3. Install bundles via vundle.
