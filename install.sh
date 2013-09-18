@@ -1,8 +1,8 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 
-config_file=~/temp/vimrc
-install_dir=~/temp/vim.d
+config_file=~/.vimrc
+install_dir=~/.vim
 plugins_dir=plugins
 type_vim="vim"
 type_zip="zip"
@@ -25,31 +25,34 @@ install_zip_type_plugin ()
     unzip -o -q $1 -d $install_dir
 }
 
+# backup and delete .vimrc and .vim/
+
+# backup
+timestamp=$(date +%Y%m%d%H%M%S)
+backup_file=~/vim_config_${timestamp}.tar.gz
+tar -czf $backup_file $config_file $install_dir
+echo "Backup current config file and plugins to ${backup_file}"
+
+# delete
+rm -rf $install_dir
+rm -f $config_file
+echo "Current config file and plugins are deleted."
+
 # install plugins
 
-# checking install directories
-if [ ! -e $install_dir ]
-then
-    echo "Creating install directory: $install_dir"
-    mkdir $install_dir
-elif [ ! -d $install_dir ]
-then
-    echo "Install directory $install_dir is not a directory."
-    exit 1
-fi
-
+# create install dir
 install_dir_plugin=${install_dir}/plugin
 install_dir_doc=${install_dir}/doc
+install_dir_bundle=${install_dir}/bundle
 
-if [ ! -e $install_dir_plugin ]
-then
-    mkdir $install_dir_plugin
-fi
-
-if [ ! -e $install_dir_doc ]
-then
-    mkdir $install_dir_doc
-fi
+mkdir $install_dir
+echo "Creating dir ${install_dir}."
+mkdir $install_dir_plugin
+echo "Creating dir ${install_dir_plugin}."
+mkdir $install_dir_doc
+echo "Creating dir ${install_dir_doc}."
+mkdir $install_dir_bundle
+echo "Creating dir ${install_dir_bundle}."
 
 cd $plugins_dir
 for plugin_file in $(ls) 
@@ -72,7 +75,13 @@ do
 done
 cd ..  # change dir back
 
+# install vundle plugin
+git clone https://github.com/gmarik/vundle.git ${install_dir}/bundle/vundle
+
 # install configuration file
 echo -n "Instaling configuration file .."
 cp -f vimrc $config_file
 echo $str_done
+
+# startup VIM to install bundles and quit
+vim +BundleInstall +qall
