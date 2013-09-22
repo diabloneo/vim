@@ -84,4 +84,4 @@ cp -f vimrc $config_file
 echo $str_done
 
 # startup VIM to install bundles and quit
-vim +BundleInstall +qall
+vim +BundleInstall "+helptags ${install_dir_doc}" +qall

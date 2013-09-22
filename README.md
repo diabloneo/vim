@@ -6,5 +6,4 @@ Executing *install.sh* script, it will install plugins under plugins/ to your *~
 
 Then you need to do following things:
 
-1. Start you VIM.
-2. Run command `:helptag ~/.vim/doc`.
+1. Start you VIM and enjoy it.
