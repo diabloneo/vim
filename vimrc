@@ -4,7 +4,7 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 set hidden
-"-- set autochdir  " conflict with cscope
+"-- set autochdir  # this is conflict with cscope
 set wildchar=<Tab> wildmenu wildmode=full
 filetype off
 
@@ -26,6 +26,7 @@ Bundle 'gmarik/vundle'
 Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on 
 filetype plugin on
@@ -34,6 +35,9 @@ filetype plugin on
 let NERDTreeChDirMode=2
 
 "Text file settings
+
+"" Markdown language
+let g:vim_markdown_folding_disabled=1
 
 "Programming settings
 syntax on
