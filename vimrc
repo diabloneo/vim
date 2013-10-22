@@ -24,7 +24,7 @@ Bundle 'gmarik/vundle'
 
 "" My bundles here (original repos on github
 Bundle 'klen/python-mode'
-Bundle 'scrooloose/nerdtree'
+""" Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'plasticboy/vim-markdown'
 
