@@ -31,9 +31,6 @@ Bundle 'plasticboy/vim-markdown'
 filetype plugin indent on 
 filetype plugin on
 
-"" NERDTree settings
-let NERDTreeChDirMode=2
-
 "Text file settings
 
 "" Markdown language
@@ -93,5 +90,3 @@ let g:pymode_folding = 0
 
 "Keyboard mappings
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
-:nnoremap <F2> :NERDTreeToggle<CR>
-:nnoremap <F3> :NERDTreeFind<CR>
