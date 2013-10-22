@@ -85,3 +85,12 @@ echo $str_done
 
 # startup VIM to install bundles and quit
 vim +BundleInstall "+helptags ${install_dir_doc}" +qall
+
+# ask to delete backup file
+echo -n "Do you want to delete backup file? (yes/no)"
+read delete_decision
+if [ $delete_decision = "yes" ]
+then
+    rm -f $backup_file
+fi
+echo "Backup file ${backup_file} was deleted."
