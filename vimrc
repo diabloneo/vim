@@ -42,6 +42,14 @@ let g:vim_markdown_folding_disabled=1
 "Programming settings
 syntax on
 
+""Tagging system settings
+set cscopetag
+set csprg=gtags-cscope
+set cscopequickfix=s-,c-,d-,i-,t-,e-,f-,g-
+
+let GtagsCscope_Auto_Load=1
+let GtagsCscope_Auto_Map=1
+
 ""C programming language
 :augroup cprograms
 :   autocmd FileReadPost *.c :set cindent
@@ -84,6 +92,6 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0
 
 "Keyboard mappings
-:nmap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
-:nmap <F2> :NERDTreeToggle<CR>
-
+:nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
+:nnoremap <F2> :NERDTreeToggle<CR>
+:nnoremap <F3> :NERDTreeFind<CR>
