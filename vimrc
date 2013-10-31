@@ -20,6 +20,9 @@ set incsearch
 set encoding=utf-8
 set fileencodings=utf-8,gbk
 
+"" Netrw settings
+let g:netrw_localrmdir="rm -r"
+
 " Vundle settings
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
