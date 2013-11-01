@@ -10,7 +10,7 @@ filetype off
 
 "" Statusline settings
 set laststatus=2
-set statusline=%f "tail of the filename
+set statusline=%m%r\"%f\"\ \ %P\ (%l,%c)\ %y
 
 "" Search settings
 set hlsearch
@@ -19,6 +19,9 @@ set incsearch
 "" Encoding settings
 set encoding=utf-8
 set fileencodings=utf-8,gbk
+
+"" Netrw settings
+let g:netrw_localrmdir="rm -r"
 
 " Vundle settings
 set rtp+=~/.vim/bundle/vundle/
