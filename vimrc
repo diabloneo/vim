@@ -16,6 +16,10 @@ filetype off
 
 "" Buffer settings
 set hidden
+set switchbuf=useopen,usetab,newtab
+
+"" Tab settings
+set showtabline=2
 
 "" Statusline settings
 set laststatus=2
