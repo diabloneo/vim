@@ -25,6 +25,26 @@ install_zip_type_plugin ()
     unzip -o -q $1 -d $install_dir
 }
 
+install_vimrc_file ()
+{
+    echo -n "Installing configuration file .."
+    cp -f vimrc $config_file
+    echo $str_done
+}
+
+# install procedure starting here
+
+# if run this script with vimrc as first argument, only install
+# ~/.vimrc file
+if [ $# -ge 1 ]
+then
+    if [ $1 = "vimrc" ]
+    then
+        install_vimrc_file
+        exit 0
+    fi
+fi
+
 # backup and delete .vimrc and .vim/
 
 # backup
@@ -79,9 +99,7 @@ cd ..  # change dir back
 git clone https://github.com/gmarik/vundle.git ${install_dir}/bundle/vundle
 
 # install configuration file
-echo -n "Instaling configuration file .."
-cp -f vimrc $config_file
-echo $str_done
+install_vimrc_file
 
 # startup VIM to install bundles and quit
 vim +BundleInstall "+helptags ${install_dir_doc}" +qall
