@@ -1,18 +1,29 @@
+""""""""""""""""""""""""""""""""""""""""
+"
+" Sections:
+"   -> Common settings
+"   -> Vundle settings
+"   -> Color theme settings
+"   -> Text file settings
+"   -> Programming settings
+"   -> Keyboard mappings
+
 " Common settings
-set nocompatible
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set hidden
-"" -- set autochdir  # this is conflict with cscope
+set nocompatible " The most important setting
+
 set wildchar=<Tab> wildmenu wildmode=full
 filetype off
+
+"" Buffer settings
+set hidden
 
 "" Statusline settings
 set laststatus=2
 set statusline=%m%r\"%f\"\ \ %P\ (%l,%c)\ %y
 
 "" Search settings
+set ignorecase
+set smartcase
 set hlsearch
 set incsearch
 
@@ -22,6 +33,9 @@ set fileencodings=utf-8,gbk
 
 "" Netrw settings
 let g:netrw_localrmdir="rm -r"
+
+"" Backups settings
+set noswapfile " turn swap file off 
 
 " Vundle settings
 set rtp+=~/.vim/bundle/vundle/
@@ -38,11 +52,19 @@ Bundle 'plasticboy/vim-markdown'
 filetype plugin indent on 
 filetype plugin on
 
-"" Color theme settings
+" Color theme settings
 syntax enable 
 
-"
 " Text file settings
+
+"" Tab and indent settings
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+set autoindent
+set smartindent
 
 "" Markdown language
 let g:vim_markdown_folding_disabled=1
@@ -52,8 +74,10 @@ let g:vim_markdown_folding_disabled=1
 "" Tagging system settings
 set cscopetag
 set csprg=gtags-cscope
+"# use quickfix window to display tagging result
 set cscopequickfix=s-,c-,d-,i-,t-,e-,f-,g-
 
+""" GtagsCscope settings
 let GtagsCscope_Auto_Load=1
 let GtagsCscope_Auto_Map=1
 let GtagsCscope_Ignore_Case=1
