@@ -16,7 +16,7 @@ filetype off
 
 "" Buffer settings
 set hidden
-set switchbuf=useopen,usetab,newtab
+set switchbuf=useopen,usetab
 
 "" Tab settings
 set showtabline=2
@@ -69,6 +69,9 @@ set tabstop=4
 
 set autoindent
 set smartindent
+
+""" cindent settings
+set cinoptions=(0
 
 "" Markdown language
 let g:vim_markdown_folding_disabled=1
