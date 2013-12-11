@@ -14,6 +14,10 @@ set nocompatible " The most important setting
 set wildchar=<Tab> wildmenu wildmode=full
 filetype off
 
+"" Move settings
+map j gj
+map k gk
+
 "" Buffer settings
 set hidden
 set switchbuf=useopen,usetab
@@ -133,3 +137,5 @@ let g:pymode_folding=0
 
 " Keyboard mappings
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
+:nnoremap <F2> :copen<CR>
+:nnoremap <F4> :cclose<CR>
