@@ -40,7 +40,6 @@ set encoding=utf-8
 set fileencodings=utf-8,gbk
 
 "" Netrw settings
-let g:netrw_localrmdir="rm -r"
 
 "" Backups settings
 set noswapfile " turn swap file off 
