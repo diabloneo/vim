@@ -52,9 +52,10 @@ Bundle 'gmarik/vundle'
 
 """ My bundles here (original repos on github
 Bundle 'klen/python-mode'
-"""" Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'Shougo/unite.vim'
+Bundle 'junegunn/vim-easy-align'
 
 filetype plugin indent on 
 filetype plugin on
@@ -138,3 +139,6 @@ let g:pymode_folding=0
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
 :nnoremap <F2> :copen<CR>
 :nnoremap <F4> :cclose<CR>
+:vmap <Enter> <Plug>(EasyAlign)
+:nmap <Leader>a <Plug>(EasyAlign)
+
