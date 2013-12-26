@@ -61,6 +61,10 @@ Bundle 'junegunn/vim-easy-align'
 filetype plugin indent on 
 filetype plugin on
 
+"" Unite settings
+let g:unite_enable_start_insert=1
+let g:unite_enable_split_vertically=1
+
 " Color theme settings
 syntax enable 
 
