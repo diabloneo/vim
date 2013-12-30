@@ -87,6 +87,8 @@ set cinoptions=(0
 let g:vim_markdown_folding_disabled=1
 
 " Programming settings
+"" Common programming settings
+set colorcolumn=81
 
 "" Tagging system settings
 set cscopetag
