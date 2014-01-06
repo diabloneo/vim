@@ -63,7 +63,6 @@ filetype plugin on
 
 "" Unite settings
 let g:unite_enable_start_insert=1
-let g:unite_enable_split_vertically=1
 let g:unite_source_history_yank_enable=1
 
 " Color theme settings
@@ -154,9 +153,7 @@ let g:pymode_folding=0
 :nmap <Leader>a <Plug>(EasyAlign)
 
 "" Unite mappings
-noremap [unite] <Nop>
-nmap f [unite]
-nnoremap <silent> [unite]b :<C-u>UniteWithBufferDir
+nnoremap <silent> fb :<C-u>UniteWithBufferDir
             \ -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> <leader>b :<C-u>Unite buffer file_mru bookmark<CR>
 
