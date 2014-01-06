@@ -91,15 +91,8 @@ set colorcolumn=81
 
 "" Tagging system settings
 set cscopetag
-set csprg=gtags-cscope
 "# use quickfix window to display tagging result
 set cscopequickfix=s-,c-,d-,i-,t-,e-,f-,g-
-
-""" GtagsCscope settings
-let GtagsCscope_Auto_Load=1
-let GtagsCscope_Auto_Map=1
-let GtagsCscope_Ignore_Case=1
-let GtagsCscope_Quiet=1
 
 "" C programming language
 :augroup cprograms
