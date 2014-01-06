@@ -57,6 +57,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'Shougo/unite.vim'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'diabloneo/cscope_maps.vim'
 
 filetype plugin indent on 
 filetype plugin on
