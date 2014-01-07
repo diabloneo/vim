@@ -106,6 +106,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,f-,g-
 "" Python programming language
 """ python-mode settings
 let g:pymode_rope=1
+let g:pymode_rope_complete_on_dot=0
 
 """" Documentation
 let g:pymode_doc=1
