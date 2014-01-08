@@ -140,7 +140,7 @@ let g:pymode_folding=0
 " Keyboard mappings
 :nmap <Space> :nohl<CR>
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
-:nnoremap <F2> :copen<CR>
+:nnoremap <F2> :botright copen<CR>
 :nnoremap <F4> :cclose<CR>
 
 "" EasyAlign mappings
