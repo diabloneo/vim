@@ -148,7 +148,7 @@ let g:pymode_folding=0
 :nmap <Leader>a <Plug>(EasyAlign)
 
 "" Unite mappings
-nnoremap <silent> fb :<C-u>UniteWithBufferDir
+nnoremap <silent> <leader>fb :<C-u>UniteWithBufferDir
             \ -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> <leader>b :<C-u>Unite buffer file_mru bookmark<CR>
 
