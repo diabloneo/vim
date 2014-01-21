@@ -81,7 +81,7 @@ set autoindent
 set smartindent
 
 """ cindent settings
-set cinoptions=(0
+set cinoptions=(0:0l1
 
 "" Markdown language
 let g:vim_markdown_folding_disabled=1
