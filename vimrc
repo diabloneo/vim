@@ -51,20 +51,22 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-""" My bundles here (original repos on github
+"" My bundles here (original repos on github)
 Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'Shougo/unite.vim'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'diabloneo/cscope_maps.vim'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on 
 filetype plugin on
 
-"" Unite settings
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
+"" CtrlP settings
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd='CtrlP'
+
+let g:ctrlp_working_path_mode='ra'
 
 " Color theme settings
 syntax enable 
@@ -146,9 +148,4 @@ let g:pymode_folding=0
 "" EasyAlign mappings
 :vmap <Enter> <Plug>(EasyAlign)
 :nmap <Leader>a <Plug>(EasyAlign)
-
-"" Unite mappings
-nnoremap <silent> <leader>fb :<C-u>UniteWithBufferDir
-            \ -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> <leader>b :<C-u>Unite buffer file_mru bookmark<CR>
 
