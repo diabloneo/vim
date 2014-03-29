@@ -61,6 +61,7 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'diabloneo/cscope_maps.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on 
 filetype plugin on
@@ -147,8 +148,37 @@ let g:pymode_folding=0
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
 :nnoremap <F2> :botright copen<CR>
 :nnoremap <F4> :cclose<CR>
+:nmap <F8> :TagbarToggle<CR>
 
 "" EasyAlign mappings
 :vmap <Enter> <Plug>(EasyAlign)
 :nmap <Leader>a <Plug>(EasyAlign)
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
