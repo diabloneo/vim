@@ -12,7 +12,9 @@
 set nocompatible " The most important setting
 
 set wildchar=<Tab> wildmenu wildmode=full
+
 filetype off
+filetype plugin indent off
 
 "" Move settings
 map j gj
@@ -58,6 +60,7 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'diabloneo/cscope_maps.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on 
 filetype plugin on
