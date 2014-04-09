@@ -4,6 +4,7 @@
 "   -> Common settings
 "   -> Vundle settings
 "   -> Color theme settings
+"   -> Directory settings
 "   -> Text file settings
 "   -> Programming settings
 "   -> Keyboard mappings
@@ -58,6 +59,7 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'diabloneo/cscope_maps.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jnwhiteh/vim-golang'
+"# Bundle 'blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on 
@@ -184,6 +186,7 @@ let g:pymode_syntax_space_errors=g:pymode_syntax_all
 let g:pymode_folding=0
 
 "" Go programming language
+:autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " Keyboard mappings
 :nmap <Space> :nohl<CR>
