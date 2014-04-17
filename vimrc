@@ -62,6 +62,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'dgryski/vim-godef'
 "# Bundle 'blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on 
 filetype plugin on
