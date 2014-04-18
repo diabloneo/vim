@@ -29,8 +29,8 @@ set switchbuf=useopen,usetab
 set showtabline=2
 
 "" Statusline settings
-set laststatus=2
-set statusline=%m%r\"%f\"\ \ %P\ (%l,%c)\ %y
+""" Replaced by vim-airline
+""" set statusline=%m%r\"%f\"\ \ %P\ (%l,%c)\ %y
 
 "" Search settings
 set ignorecase
@@ -69,6 +69,11 @@ filetype plugin on
 
 " Color theme settings
 syntax enable 
+set t_Co=256
+
+"" vim-airline settings
+let g:airline_theme="murmur"
+set laststatus=2
 
 " Diectory settings
 
