@@ -94,8 +94,8 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-set autoindent
-set smartindent
+"set autoindent
+"set smartindent
 
 """ cindent settings
 set cinoptions=(0:0l1
@@ -103,7 +103,12 @@ set cinoptions=(0:0l1
 "" Markdown language
 let g:vim_markdown_folding_disabled=1
 
+"" EasyAlign mappings
+:vmap <Enter> <Plug>(EasyAlign)
+:nmap <Leader>a <Plug>(EasyAlign)
+
 " Programming settings
+
 "" Common programming settings
 set colorcolumn=81
 highlight ColorColumn ctermbg=7
@@ -146,10 +151,6 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
-"" EasyAlign mappings
-:vmap <Enter> <Plug>(EasyAlign)
-:nmap <Leader>a <Plug>(EasyAlign)
 
 "" C programming language
 :augroup cprograms
