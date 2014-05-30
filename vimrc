@@ -111,7 +111,7 @@ let g:vim_markdown_folding_disabled=1
 
 "" Common programming settings
 set colorcolumn=81
-highlight ColorColumn ctermbg=7
+highlight ColorColumn ctermbg=4
 
 "" Tagging system settings
 
