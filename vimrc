@@ -63,6 +63,8 @@ Bundle 'dgryski/vim-godef'
 "# Bundle 'blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
 Bundle 'bling/vim-airline'
+Bundle 'shougo/unite.vim'
+Bundle 'shougo/vimfiler.vim'
 
 filetype plugin indent on 
 filetype plugin on
