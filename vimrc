@@ -54,6 +54,7 @@ Bundle 'gmarik/vundle'
 "" My bundles here (original repos on github)
 Bundle 'klen/python-mode'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'diabloneo/cscope_maps.vim'
@@ -63,8 +64,6 @@ Bundle 'dgryski/vim-godef'
 "# Bundle 'blackrush/vim-gocode'
 Bundle 'majutsushi/tagbar'
 Bundle 'bling/vim-airline'
-Bundle 'shougo/unite.vim'
-Bundle 'shougo/vimfiler.vim'
 
 filetype plugin indent on 
 filetype plugin on
@@ -87,6 +86,9 @@ let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 
 let g:ctrlp_working_path_mode='a'
+
+"" nerdtree settings
+map <C-n> :NERDTreeToggle<CR>
 
 " Text file settings
 
