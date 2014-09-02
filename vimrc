@@ -156,6 +156,10 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+"" make commands settings
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
 "" C programming language
 :augroup cprograms
 :   autocmd FileReadPost *.c :set cindent
