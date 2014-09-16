@@ -183,8 +183,9 @@ let g:pymode_run_key='<leader>r'
 
 """" Linting
 let g:pymode_lint=1
-let g:pymode_lint_checker=" pyflakes,pep8"
+let g:pymode_lint_checker="pyflakes,pep8"
 let g:pymode_lint_write=1
+let g:pymode_lint_ignore = "E501"
 
 """" Support virtualenv
 let g:pymode_virtualenv=1
