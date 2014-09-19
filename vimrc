@@ -117,6 +117,9 @@ let g:vim_markdown_folding_disabled=1
 set colorcolumn=81
 highlight ColorColumn ctermbg=4
 
+"" Diff and patch settings
+set diffopt=filler,vertical,context:3
+
 "" Tagging system settings
 
 """ Cscope settings
