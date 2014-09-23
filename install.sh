@@ -107,8 +107,9 @@ vim +BundleInstall "+helptags ${install_dir_doc}" +qall
 # ask to delete backup file
 echo -n "Do you want to delete backup file? (yes/no)"
 read delete_decision
-if [ $delete_decision = "yes" ]
-then
+if [ $delete_decision = "yes" ]; then
     rm -f $backup_file
+    echo "Backup file ${backup_file} was deleted."
+else
+    echo "Your previous configs was packed in ${backup_file}"
 fi
-echo "Backup file ${backup_file} was deleted."
