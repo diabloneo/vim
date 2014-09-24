@@ -6,41 +6,50 @@ install_dir=~/.vim
 plugins_dir=plugins
 type_vim="vim"
 type_zip="zip"
-
 str_done=" ok"
+timestamp=$(date +%Y%m%d%H%M%S)
 
-if [ ! -e $plugins_dir ]
-then
-    echo "No plugins directory."
-    exit 1
-fi
-
-install_vim_type_plugin ()
-{
+install_vim_type_plugin () {
     cp $1 ${install_dir_plugin}
 }
 
-install_zip_type_plugin ()
-{
+install_zip_type_plugin () {
     unzip -o -q $1 -d $install_dir
 }
 
-install_vimrc_file ()
-{
+install_vimrc_file () {
     echo -n "Installing configuration file .."
     cp -f vimrc $config_file
     echo $str_done
 }
 
+delete_backup_file() {
+    local filepath=${1}
+    echo -n "Do you want to delete backup file? (yes/no)"
+    read delete_decision
+    if [ $delete_decision = "yes" ]; then
+        rm -f ${filepath}
+        echo "Backup file ${filepath} was deleted."
+    else
+        echo "Your previous configs was packed in ${filepath}"
+    fi
+}
+
+if [ ! -e $plugins_dir ]; then
+    echo "No plugins directory."
+    exit 1
+fi
+
 # install procedure starting here
 
 # if run this script with vimrc as first argument, only install
 # ~/.vimrc file
-if [ $# -ge 1 ]
-then
-    if [ $1 = "vimrc" ]
-    then
+if [ $# -ge 1 ]; then
+    if [ $1 = "vimrc" ]; then
+        backup_vimrc=~/vimrc_${timestamp}
+        cp ${config_file} ${backup_vimrc}
         install_vimrc_file
+        delete_backup_file ${backup_vimrc}
         exit 0
     fi
 fi
@@ -48,7 +57,7 @@ fi
 # backup and delete .vimrc and .vim/
 
 # backup
-timestamp=$(date +%Y%m%d%H%M%S)
+
 backup_file=~/vim_config_${timestamp}.tar.gz
 tar -czf $backup_file $config_file $install_dir
 echo "Backup current config file and plugins to ${backup_file}"
@@ -75,18 +84,15 @@ mkdir $install_dir_bundle
 echo "Creating dir ${install_dir_bundle}."
 
 cd $plugins_dir
-for plugin_file in $(ls) 
-do
+for plugin_file in $(ls); do
     plugin_type=$(echo $plugin_file | awk -F . '{print $NF}')
     plugin_name=$(basename $plugin_file .$plugin_type)
     echo -n "Installing $plugin_name: type $plugin_type .."
     
-    if [ $plugin_type = $type_vim ]
-    then
+    if [ $plugin_type = $type_vim ]; then
         install_vim_type_plugin $plugin_file
         echo $str_done
-    elif [ $plugin_type = $type_zip ]
-    then
+    elif [ $plugin_type = $type_zip ]; then
         install_zip_type_plugin $plugin_file
         echo $str_done
     else
@@ -104,12 +110,4 @@ install_vimrc_file
 # startup VIM to install bundles and quit
 vim +BundleInstall "+helptags ${install_dir_doc}" +qall
 
-# ask to delete backup file
-echo -n "Do you want to delete backup file? (yes/no)"
-read delete_decision
-if [ $delete_decision = "yes" ]; then
-    rm -f $backup_file
-    echo "Backup file ${backup_file} was deleted."
-else
-    echo "Your previous configs was packed in ${backup_file}"
-fi
+delete_backup_file ${backup_file}
