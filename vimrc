@@ -12,6 +12,7 @@
 " Common settings
 set nocompatible " The most important setting
 
+set history=200
 set wildchar=<Tab> wildmenu wildmode=longest,list
 
 filetype off
