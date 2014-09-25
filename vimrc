@@ -12,7 +12,7 @@
 " Common settings
 set nocompatible " The most important setting
 
-set wildchar=<Tab> wildmenu wildmode=full
+set wildchar=<Tab> wildmenu wildmode=longest,list
 
 filetype off
 filetype plugin indent off
