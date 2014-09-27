@@ -217,4 +217,4 @@ let g:godef_same_file_in_same_window=1
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
 :nnoremap <F2> :botright copen<CR>
 :nnoremap <F4> :cclose<CR>
-
+:cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
