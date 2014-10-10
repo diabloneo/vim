@@ -50,22 +50,22 @@ set noswapfile " turn swap file off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 "" My bundles here (original repos on github)
-Bundle 'klen/python-mode'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'diabloneo/cscope_maps.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'dgryski/vim-godef'
-"# Bundle 'blackrush/vim-gocode'
-Bundle 'majutsushi/tagbar'
-Bundle 'bling/vim-airline'
-Bundle 'mileszs/ack.vim'
+Plugin 'klen/python-mode'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'diabloneo/cscope_maps.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'dgryski/vim-godef'
+"# Plugin 'blackrush/vim-gocode'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'mileszs/ack.vim'
 
 filetype plugin indent on 
 filetype plugin on

@@ -108,6 +108,6 @@ git clone https://github.com/gmarik/vundle.git ${install_dir}/bundle/vundle
 install_vimrc_file
 
 # startup VIM to install bundles and quit
-vim +BundleInstall "+helptags ${install_dir_doc}" +qall
+vim +PluginInstall "+helptags ${install_dir_doc}" +qall
 
 delete_backup_file ${backup_file}
