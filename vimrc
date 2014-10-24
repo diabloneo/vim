@@ -119,6 +119,9 @@ let g:vim_markdown_folding_disabled=1
 set colorcolumn=81
 highlight ColorColumn ctermbg=4
 
+"" Auto completion settings
+set completeopt=menu
+
 "" Diff and patch settings
 set diffopt=filler,vertical,context:3
 
@@ -176,7 +179,8 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "" Python programming language
 """ python-mode settings
 let g:pymode_rope=1
-let g:pymode_rope_complete_on_dot=0
+let g:pymode_rope_completion=1
+let g:pymode_rope_complete_on_dot=1
 
 """" Documentation
 let g:pymode_doc=1
