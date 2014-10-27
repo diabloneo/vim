@@ -170,6 +170,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 
 "" C programming language
 :augroup cprograms
+:   autocmd!
 :   autocmd FileReadPost *.c :set cindent
 :   autocmd FileReadPost *.h :set cindent
 :   autocmd FileReadPost *.hbh :set cindent 
@@ -216,6 +217,12 @@ let g:pymode_folding=0
 :autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 let g:godef_same_file_in_same_window=1
+
+"" Java programming language
+:augroup javaprograms
+:   autocmd!
+:   autocmd FileType java set shiftwidth=2 tabstop=2
+:augroup END
 
 " Keyboard mappings
 :nmap <Space> :nohl<CR>
