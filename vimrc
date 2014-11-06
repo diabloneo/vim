@@ -103,9 +103,6 @@ set tabstop=4
 "set autoindent
 "set smartindent
 
-""" cindent settings
-set cinoptions=(0:0l1
-
 "" Markdown language
 let g:vim_markdown_folding_disabled=1
 
@@ -171,10 +168,8 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "" C programming language
 :augroup cprograms
 :   autocmd!
-:   autocmd FileReadPost *.c :set cindent
-:   autocmd FileReadPost *.h :set cindent
-:   autocmd FileReadPost *.hbh :set cindent 
-:   autocmd FileReadPost *.hbc :set cindent
+:   autocmd FileReadPost *.c,*.h,*.hbh,*.hbc set cindent | \
+                                             set cinoptions=(0:0l1
 :augroup END
 
 "" Python programming language
