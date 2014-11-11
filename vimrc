@@ -67,6 +67,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'mattn/emmet-vim'
 
 filetype plugin indent on 
 filetype plugin on
@@ -217,6 +218,10 @@ let g:godef_same_file_in_same_window=1
 :   autocmd!
 :   autocmd FileType java set shiftwidth=2 tabstop=2
 :augroup END
+
+"" HTML programming language
+let g:user_emmet_install_global=0
+autocmd FileType html EmmetInstall
 
 " Keyboard mappings
 :nmap <Space> :nohl<CR>
