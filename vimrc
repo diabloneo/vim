@@ -68,6 +68,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'kien/tabman.vim', {'name': 'tabman'}
 
 call vundle#end()
 
@@ -95,6 +96,9 @@ let g:ctrlp_working_path_mode='a'
 
 "" nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
+
+"" Tabman settings
+nmap <F9> :TMToggle<CR>
 
 " Text file settings
 
