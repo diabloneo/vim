@@ -47,10 +47,10 @@ set fileencodings=utf-8,gbk
 set noswapfile " turn swap file off 
 
 " Vundle settings
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 "" My bundles here (original repos on github)
 Plugin 'klen/python-mode'
@@ -68,6 +68,8 @@ Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mattn/emmet-vim'
+
+call vundle#end()
 
 filetype plugin indent on 
 filetype plugin on

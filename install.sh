@@ -102,7 +102,7 @@ done
 cd ..  # change dir back
 
 # install vundle plugin
-git clone https://github.com/gmarik/vundle.git ${install_dir}/bundle/vundle
+git clone https://github.com/gmarik/vundle.git ${install_dir}/bundle/Vundle.vim
 
 # install configuration file
 install_vimrc_file
