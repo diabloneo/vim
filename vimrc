@@ -235,6 +235,7 @@ let g:user_emmet_install_global=0
 
 function! CodingUtf8()
     call append(line('.'), '# -*- coding: utf-8 -*-')
+    call cursor(line('.') + 1, 1)
 endfunction
 
 " Keyboard mappings
