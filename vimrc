@@ -227,10 +227,10 @@ let g:godef_same_file_in_same_window=1
 
 "" HTML programming language
 let g:user_emmet_install_global=0
-:augroup htmlcss
+:augroup htmljscss
 :  autocmd!
-:  autocmd FileType html,javascript EmmetInstall
-:  autocmd FileType html,javascript set shiftwidth=2 tabstop=2
+:  autocmd FileType html,javascript,css EmmetInstall
+:  autocmd FileType html,javascript,css set shiftwidth=2 tabstop=2
 :augroup END
 
 " Keyboard mappings
