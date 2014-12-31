@@ -5,7 +5,7 @@
 "   -> Vundle settings
 "   -> Color theme settings
 "   -> Directory settings
-"   -> Text file settings
+"   -> Common file settings
 "   -> Programming settings
 "   -> Keyboard mappings
 
@@ -100,16 +100,13 @@ map <C-n> :NERDTreeToggle<CR>
 "" Tabman settings
 nmap <F9> :TMToggle<CR>
 
-" Text file settings
+" Common file settings
 
 "" Tab and indent settings
 set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
-
-"set autoindent
-"set smartindent
 
 "" Markdown language
 let g:vim_markdown_folding_disabled=1
