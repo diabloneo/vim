@@ -7,6 +7,7 @@
 "   -> Directory settings
 "   -> Common file settings
 "   -> Programming settings
+"   -> Define functions
 "   -> Keyboard mappings
 
 " Common settings
@@ -229,6 +230,12 @@ let g:user_emmet_install_global=0
 :  autocmd FileType html,javascript,css EmmetInstall
 :  autocmd FileType html,javascript,css set shiftwidth=2 tabstop=2
 :augroup END
+
+" Define functions
+
+function! CodingUtf8()
+    call append(line('.'), '# -*- coding: utf-8 -*-')
+endfunction
 
 " Keyboard mappings
 :nmap <Space> :nohl<CR>
