@@ -70,6 +70,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/tabman.vim', {'name': 'tabman'}
+Plugin 'altercation/vim-colors-solarized', {'name': 'solarized-theme'}
 
 call vundle#end()
 
@@ -79,6 +80,8 @@ filetype plugin on
 " Color theme settings
 syntax enable 
 set t_Co=256
+set background=light
+colorscheme solarized
 
 "" vim-airline settings
 let g:airline_theme="murmur"
