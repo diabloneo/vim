@@ -237,13 +237,14 @@ let g:user_emmet_install_global=0
 " Define functions
 
 function! CodingUtf8()
-    call append(line('.'), '# -*- coding: utf-8 -*-')
+    call append(line('.') - 1, '# -*- coding: utf-8 -*-')
     call cursor(line('.') + 1, 1)
 endfunction
 
 " Keyboard mappings
 :nmap <Space> :nohl<CR>
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
+:nnoremap <C-k>8 :call CodingUtf8()<CR>
 :nnoremap <F2> :botright copen<CR>
 :nnoremap <F4> :cclose<CR>
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
