@@ -125,6 +125,10 @@ let g:vim_markdown_folding_disabled=1
 set colorcolumn=81
 highlight ColorColumn ctermbg=4
 
+"" Fold settings
+set foldmethod=indent
+set nofoldenable
+
 "" Auto completion settings
 set completeopt=menu
 
