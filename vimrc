@@ -71,6 +71,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/tabman.vim', {'name': 'tabman'}
 Plugin 'altercation/vim-colors-solarized', {'name': 'solarized-theme'}
+Plugin 'benmills/vimux'
 
 call vundle#end()
 
@@ -252,3 +253,5 @@ endfunction
 :nnoremap <F2> :botright copen<CR>
 :nnoremap <F4> :cclose<CR>
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+:nnoremap <Leader>vp :VimuxPromptCommand<CR>
+:nnoremap <Leader>vq :VimuxCloseRunner<CR>
