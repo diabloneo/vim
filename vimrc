@@ -72,6 +72,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'kien/tabman.vim', {'name': 'tabman'}
 Plugin 'altercation/vim-colors-solarized', {'name': 'solarized-theme'}
 Plugin 'benmills/vimux'
+Plugin 'marcweber/vim-addon-mw-utils', {'name': 'vim-addon-mw-utils'} " used by vim-snipmate
+Plugin 'tomtom/tlib_vim', {'name': 'tlib_vim'} " used by vim-snipmate
+Plugin 'garbas/vim-snipmate', {'name': 'vim-snipmate'}
+Plugin 'honza/vim-snippets', {'name': 'vim-snippets'}
 
 call vundle#end()
 
