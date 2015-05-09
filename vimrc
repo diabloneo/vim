@@ -19,6 +19,10 @@ set wildchar=<Tab> wildmenu wildmode=longest,list
 filetype off
 filetype plugin indent off
 
+" if has("python3")
+"     command! -nargs=1 Py py3 <args>
+" endif
+
 "" Move settings
 map j gj
 map k gk
@@ -191,12 +195,15 @@ autocmd QuickFixCmdPost    l* nested lwindow
 :augroup END
 
 "" Python programming language
+
+""" jedi-vim settings
+let g:jedi#use_splits_not_buffers="winwidth"
+
 """ python-mode settings
-let g:pymode_rope=1
+let g:pymode_rope=0
 
 """" Documentation
-let g:pymode_doc=1
-let g:pymode_doc_key='K'
+let g:pymode_doc=0
 
 """" Run code
 let g:pymode_run=1
