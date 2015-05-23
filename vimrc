@@ -98,6 +98,9 @@ set laststatus=2
 
 " Diectory settings
 
+"" BufExplorer settings
+let g:bufExplorerShowRelativePath=1
+
 "" Netrw settings
 let g:netrw_list_hide='.*\.o$,.*\.d$'
 
