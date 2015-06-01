@@ -109,9 +109,13 @@ let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 
 let g:ctrlp_working_path_mode='a'
+let g:ctrlp_custom_ignore={
+    \ 'file': '\v\.(pyc|pyo)$',
+    \ }
 
 "" nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['.pyc$[[file]]', '.pyo$[[file]]']
 
 "" Tabman settings
 nmap <F9> :TMToggle<CR>
