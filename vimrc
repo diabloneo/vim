@@ -206,6 +206,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 
 """ jedi-vim settings
 let g:jedi#use_splits_not_buffers="winwidth"
+let g:jedi#show_call_signatures=0
 
 """ python-mode settings
 let g:pymode_rope=0
