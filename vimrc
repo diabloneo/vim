@@ -80,6 +80,7 @@ Plugin 'marcweber/vim-addon-mw-utils', {'name': 'vim-addon-mw-utils'} " used by 
 Plugin 'tomtom/tlib_vim', {'name': 'tlib_vim'} " used by vim-snipmate
 Plugin 'garbas/vim-snipmate', {'name': 'vim-snipmate'}
 Plugin 'honza/vim-snippets', {'name': 'vim-snippets'}
+Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
 
 call vundle#end()
 
