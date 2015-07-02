@@ -152,6 +152,12 @@ set completeopt=menu
 "" Diff and patch settings
 set diffopt=filler,vertical,context:3
 
+"" Comment settings
+let loaded_nerd_comments=1
+let NERDSpaceDelims=1
+let NERDRemoveExtraSpaces=1
+let NERDCompactSexyComs=1
+
 "" Tagging system settings
 
 """ Cscope settings
