@@ -153,7 +153,6 @@ set completeopt=menu
 set diffopt=filler,vertical,context:3
 
 "" Comment settings
-let loaded_nerd_comments=1
 let NERDSpaceDelims=1
 let NERDRemoveExtraSpaces=1
 let NERDCompactSexyComs=1
