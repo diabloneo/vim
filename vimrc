@@ -284,4 +284,4 @@ endfunction
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 :nnoremap <Leader>vp :VimuxPromptCommand<CR>
 :nnoremap <Leader>vq :VimuxCloseRunner<CR>
-:nnoremap tc :tabclose<CR>
+:nnoremap <Leader>tc :tabclose<CR>
