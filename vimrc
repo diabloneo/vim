@@ -29,7 +29,7 @@ map k gk
 
 "" Buffer settings
 set hidden
-set switchbuf=useopen,usetab
+set switchbuf=useopen
 
 "" Tab settings
 set showtabline=2
@@ -219,6 +219,7 @@ let g:jedi#show_call_signatures=0
 
 """ python-mode settings
 let g:pymode_rope=0
+let g:pymode_options_colorcolumn=1
 
 """" Documentation
 let g:pymode_doc=0
@@ -229,9 +230,10 @@ let g:pymode_run_key='<leader>r'
 
 """" Linting
 let g:pymode_lint=1
-let g:pymode_lint_checker="pyflakes,pep8"
+let g:pymode_lint_checker="pyflakes,pep8,pep257"
 let g:pymode_lint_write=1
 let g:pymode_lint_ignore = "E501,C901"
+let g:pymode_lint_cwindow=1
 
 """" Support virtualenv
 let g:pymode_virtualenv=1
@@ -280,7 +282,9 @@ endfunction
 :nnoremap <C-k>0 :vsplit<CR><C-w><C-w>:split<CR><C-w><C-w><C-w>
 :nnoremap <C-k>8 :call CodingUtf8()<CR>
 :nnoremap <F2> :botright copen<CR>
-:nnoremap <F4> :cclose<CR>
+:nnoremap <F3> :cclose<CR>
+:nnoremap <F6> :lopen<CR>
+:nnoremap <F7> :lclose<CR>
 :cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 :nnoremap <Leader>vp :VimuxPromptCommand<CR>
 :nnoremap <Leader>vq :VimuxCloseRunner<CR>
