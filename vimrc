@@ -232,7 +232,7 @@ let g:pymode_run_key='<leader>r'
 let g:pymode_lint=1
 let g:pymode_lint_checker="pyflakes,pep8,pep257"
 let g:pymode_lint_write=1
-let g:pymode_lint_ignore = "E501,C901"
+let g:pymode_lint_ignore = "E129,E501,C901"
 let g:pymode_lint_cwindow=1
 
 """" Support virtualenv
