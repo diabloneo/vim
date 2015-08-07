@@ -81,6 +81,7 @@ Plugin 'tomtom/tlib_vim', {'name': 'tlib_vim'} " used by vim-snipmate
 Plugin 'garbas/vim-snipmate', {'name': 'vim-snipmate'}
 Plugin 'honza/vim-snippets', {'name': 'vim-snippets'}
 Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
+Plugin 'nvie/vim-flake8', {'name': 'vim-flake8'}
 
 call vundle#end()
 
@@ -217,6 +218,13 @@ autocmd QuickFixCmdPost    l* nested lwindow
 let g:jedi#use_splits_not_buffers="winwidth"
 let g:jedi#show_call_signatures=0
 
+""" vim-flake8 settings
+let g:flake8_show_in_gutter=1
+let g:flake8_show_in_file=1
+let g:flake8_quickfix_height=9
+let g:no_flake8_maps=1
+autocmd FileType python autocmd BufWritePost <buffer> call Flake8()
+
 """ python-mode settings
 let g:pymode_rope=0
 let g:pymode_options_colorcolumn=1
@@ -229,7 +237,7 @@ let g:pymode_run=1
 let g:pymode_run_key='<leader>r'
 
 """" Linting
-let g:pymode_lint=1
+let g:pymode_lint=0
 let g:pymode_lint_checker="pyflakes,pep8,pep257"
 let g:pymode_lint_write=1
 let g:pymode_lint_ignore = "E129,E501,C901"
