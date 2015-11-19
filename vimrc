@@ -58,16 +58,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "" My bundles here (original repos on github)
-Plugin 'klen/python-mode'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'diabloneo/cscope_maps.vim'
 Plugin 'kien/ctrlp.vim'
-"# Plugin 'jnwhiteh/vim-golang'
-"# Plugin 'dgryski/vim-godef'
-"# Plugin 'blackrush/vim-gocode'
+Plugin 'fatih/vim-go', {'name': 'fatih-vim-go'}
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'mileszs/ack.vim'
@@ -82,6 +79,8 @@ Plugin 'garbas/vim-snipmate', {'name': 'vim-snipmate'}
 Plugin 'honza/vim-snippets', {'name': 'vim-snippets'}
 Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
 Plugin 'nvie/vim-flake8', {'name': 'vim-flake8'}
+Plugin 'Valloric/YouCompleteMe', {'name': 'youcompleteme'}
+Plugin 'hynek/vim-python-pep8-indent', {'name': 'vim-python-pep8-indent'}
 
 call vundle#end()
 
@@ -172,35 +171,6 @@ let g:tagbar_autofocus=1
 let g:tagbar_foldlevel=0
 let g:tagbar_autoshowtag=1
 
-"# extend tagbar for golang
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
 "" make commands settings
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -223,46 +193,27 @@ let g:flake8_show_in_gutter=1
 let g:flake8_show_in_file=1
 let g:flake8_quickfix_height=9
 let g:no_flake8_maps=1
-autocmd FileType python autocmd BufWritePost <buffer> call Flake8()
-
-""" python-mode settings
-let g:pymode_rope=0
-let g:pymode_options_colorcolumn=1
-
-"""" Documentation
-let g:pymode_doc=0
-
-"""" Run code
-let g:pymode_run=1
-let g:pymode_run_key='<leader>r'
-
-"""" Linting
-let g:pymode_lint=0
-let g:pymode_lint_checker="pyflakes,pep8,pep257"
-let g:pymode_lint_write=1
-let g:pymode_lint_ignore = "E129,E501,C901"
-let g:pymode_lint_cwindow=1
-
-"""" Support virtualenv
-let g:pymode_virtualenv=1
-
-"""" Enable breakpoints plugin
-let g:pymode_breakpoint=1
-let g:pymode_breakpoint_key='<leader>b'
-
-"""" Syntax highlighting
-let g:pymode_syntax=1
-let g:pymode_syntax_all=1
-let g:pymode_syntax_indent_errors=g:pymode_syntax_all
-let g:pymode_syntax_space_errors=g:pymode_syntax_all
-
-"""" Don's autofold code
-let g:pymode_folding=0
+autocmd BufWritePost *.py call Flake8()
 
 "" Go programming language
-:autocmd FileType go autocmd BufWritePre <buffer> Fmt
+:augroup golang
+:   autocmd!
+:   autocmd FileType go nmap <leader>r <Plug>(go-run)
+:   autocmd FileType go nmap <leader>b <Plug>(go-build)
+:   autocmd FileType go nmap <leader>t <Plug>(go-test)
+:   autocmd FileType go nmap <leader>c <Plug>(go-coverage)
+:   autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
+:   autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+:   autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
+:   autocmd FileType go nmap <Leader>s <Plug>(go-implements)
+:   autocmd FileType go nmap <Leader>e <Plug>(go-rename)
+:augroup END
 
-let g:godef_same_file_in_same_window=1
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_structs=1
+let g:go_highlight_operators=1
+let g:go_highlight_build_constraints=1
 
 "" Java programming language
 :augroup javaprograms
