@@ -109,9 +109,11 @@ let g:netrw_list_hide='.*\.o$,.*\.d$'
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
 
+let g:ctrlp_show_hidden=1
 let g:ctrlp_working_path_mode='a'
 let g:ctrlp_custom_ignore={
     \ 'file': '\v\.(pyc|pyo)$',
+    \ 'dir': '\v[\/]\.(git|hg|svn|tox)$',
     \ }
 
 "" nerdtree settings
