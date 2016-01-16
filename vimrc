@@ -141,7 +141,7 @@ let g:vim_markdown_folding_disabled=1
 " Programming settings
 
 "" Common programming settings
-set colorcolumn=81
+set colorcolumn=80,100
 highlight ColorColumn ctermbg=4
 
 "" Fold settings
@@ -209,6 +209,7 @@ autocmd BufWritePost *.py call Flake8()
 :   autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
 :   autocmd FileType go nmap <Leader>s <Plug>(go-implements)
 :   autocmd FileType go nmap <Leader>e <Plug>(go-rename)
+:   autocmd BufWritePost *.go lclose | GoLint
 :augroup END
 
 let g:go_highlight_functions=1
