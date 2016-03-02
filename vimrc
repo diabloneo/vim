@@ -66,7 +66,8 @@ Plugin 'diabloneo/cscope_maps.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go', {'name': 'fatih-vim-go'}
 Plugin 'majutsushi/tagbar'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mattn/emmet-vim'
@@ -94,7 +95,7 @@ set background=light
 colorscheme solarized
 
 "" vim-airline settings
-let g:airline_theme="murmur"
+let g:airline_theme='solarized'
 set laststatus=2
 
 " Diectory settings
