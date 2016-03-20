@@ -93,6 +93,10 @@ syntax enable
 set t_Co=256
 set background=light
 colorscheme solarized
+set ruler
+set number
+set cursorline
+set cursorcolumn
 
 "" vim-airline settings
 let g:airline_theme='solarized'
