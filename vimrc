@@ -69,7 +69,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mileszs/ack.vim'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'kien/tabman.vim', {'name': 'tabman'}
 Plugin 'altercation/vim-colors-solarized', {'name': 'solarized-theme'}
@@ -80,8 +79,10 @@ Plugin 'garbas/vim-snipmate', {'name': 'vim-snipmate'}
 Plugin 'honza/vim-snippets', {'name': 'vim-snippets'}
 Plugin 'tpope/vim-fugitive', {'name': 'fugitive'}
 Plugin 'nvie/vim-flake8', {'name': 'vim-flake8'}
-Plugin 'Valloric/YouCompleteMe', {'name': 'youcompleteme'}
+Plugin 'davidhalter/jedi-vim'
 Plugin 'hynek/vim-python-pep8-indent', {'name': 'vim-python-pep8-indent'}
+Plugin 'Valloric/YouCompleteMe', {'name': 'youcompleteme'}
+Plugin 'chase/vim-ansible-yaml', {'name': 'ansible-yaml'}
 
 call vundle#end()
 
@@ -156,6 +157,12 @@ set nofoldenable
 "" Auto completion settings
 set completeopt=menu
 
+""" YouCompleteMe settings
+let g:ycm_confirm_extra_conf=0
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+" 只能是 #include 或已打开的文件
+nnoremap <leader>je :YcmCompleter GoToDefinition<CR>
+
 "" Diff and patch settings
 set diffopt=filler,vertical,context:3
 
@@ -214,9 +221,10 @@ autocmd BufWritePost *.py call Flake8()
 :   autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
 :   autocmd FileType go nmap <Leader>s <Plug>(go-implements)
 :   autocmd FileType go nmap <Leader>e <Plug>(go-rename)
-:   autocmd BufWritePost *.go lclose | GoLint
+:   autocmd FileType go nmap <Leader>i :GoImport 
 :augroup END
 
+let g:go_metalinter_autosave=1
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
 let g:go_highlight_structs=1
