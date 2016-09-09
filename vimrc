@@ -119,7 +119,7 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_working_path_mode='a'
 let g:ctrlp_custom_ignore={
     \ 'file': '\v\.(pyc|pyo)$',
-    \ 'dir': '\v[\/]\.(git|hg|svn|tox)$',
+    \ 'dir': '\v[\/]\.(git|hg|svn|tox)|vendor$',
     \ }
 
 "" nerdtree settings
